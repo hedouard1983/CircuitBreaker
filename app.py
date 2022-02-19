@@ -5,8 +5,7 @@ class CircuitBreaker:
         self.client = http.Client
         self.error_threshold = error_threshold
         self.time_window = time_window
-        self.error_count = 0
-        self.last_error_time = None
+
 
     def do_request(self, url):
         try:
@@ -17,8 +16,10 @@ class CircuitBreaker:
             self.error_count += 1
             self.last_error_time = time.time()
             raise e
+
 if __name__ == '__main__':
         client = http.Client()
+    stub_client = StubClient()
     breaker = CircuitBreaker(stub_client, x, y)
     for n in range(10):
         try:
