@@ -1,2 +1,2 @@
-# CircuityBreaker
-Circuity Breaker App - Python
+# Circuit Breaker
+Circuit Breaker App - Python
